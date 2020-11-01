@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Game</title>
+</head>
+<body>
+	<form th:object="${newGame}" th:action="@{/update/{id}(id=${newGame.id})}"
+	method=POST>
+		Title: <input name="title" size="20" th:field="*{title}"><br>
+		Genre: <input name="genre" size="20" th:field="*{genre}"><br>
+		Number of Players: <input name="players" size="3" th:field="*{players}"><br>
+		<input name="submit" type="submit" value="submit"/>
+	</form>
+	<button onclick="window.location.href='viewAll'">View all Games</button>
+</body>
+</html>
